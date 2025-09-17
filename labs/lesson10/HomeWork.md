@@ -18,13 +18,13 @@
 ### Коммутатор
 ![Switch_ipv6_info.jpg](images/Switch_ipv6_info.jpg)
 ### PCA и PCB
-![PCA_ipv6_info.jpg](images/PCA_ipv6_info.jpg)
+![PCA_ipv6_info.jpg](images/PCA_ipv6_info.jpg)</br>
 ![PCB_ipv6_info.jpg](images/PCB_ipv6_info.jpg)
 
 ## Часть 3. Проверка сквозного подключения
 ### PCA
-![PCA_ping_fe801.jpg](images/PCA_ping_fe801.jpg)
+![PCA_ping_fe801.jpg](images/PCA_ping_fe801.jpg)</br>
 ![PCA_tracert_fe801.jpg](images/PCA_tracert_fe801.jpg)
 ### PCB
-![PCB_ping_PCA.jpg](images/PCB_ping_PCA.jpg)
+![PCB_ping_PCA.jpg](images/PCB_ping_PCA.jpg)</br>
 ![PCB_ping_fe801.jpg](images/PCB_ping_fe801.jpg)
