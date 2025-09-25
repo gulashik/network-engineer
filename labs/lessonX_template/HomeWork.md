@@ -1,3 +1,20 @@
+### Оглавление
+Если у вас уже есть оглавление в файле:
+1. Поместить <!-- TOC --> в начало файла
+2. Курсор в область оглавления
+2. Нажать `⌃`+`N`
+3. Выбрать **Update Table of Contents**
+
+<!-- TOC -->
+* [Main title](#main-title)
+    * [Subtitle](#subtitle)
+    * [Another subtitle](#another-subtitle)
+* [Another main title](#another-main-title)
+    * [Secondary subtitle](#secondary-subtitle)
+        * [Third level header](#third-level-header)
+<!-- TOC -->
+
+
 # Инфо
 ### Пароли
 все пароли **cisco** </br>
