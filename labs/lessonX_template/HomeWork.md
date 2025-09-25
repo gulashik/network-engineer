@@ -26,10 +26,10 @@
 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
 | 0   | 0  | 0  | 0  | 0 | 0 | 0 | 0 |
 
-### файл проекта 
+### Файл проекта 
 - [HomeWork.pkt](cisco-packet-tracer/HomeWork.pkt) 
 
-### конфиги сетевых устройств 
+### Конфиги сетевых устройств 
 - [Папка configs](cisco-packet-tracer/configs)
 
 
