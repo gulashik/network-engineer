@@ -6,7 +6,22 @@
     * [S1](#s1)
     * [S2](#s2)
     * [S3](#s3)
+    * [S1 ping S2, S3](#s1-ping-s2-s3)
+    * [S2 ping S3](#s2-ping-s3)
   * [Часть 2. Выбор корневого моста](#часть-2-выбор-корневого-моста)
+    * [Шаг 1:	Отключите все порты на коммутаторах.](#шаг-1-отключите-все-порты-на-коммутаторах)
+      * [S1](#s1-1)
+      * [S2](#s2-1)
+      * [S3](#s3-1)
+    * [Шаг 2:	Настройте подключенные порты в качестве транковых.](#шаг-2-настройте-подключенные-порты-в-качестве-транковых)
+      * [S1](#s1-2)
+      * [S2](#s2-2)
+      * [S3](#s3-2)
+    * [Шаг 3:	Включите порты F0/2 и F0/4 на всех коммутаторах.](#шаг-3-включите-порты-f02-и-f04-на-всех-коммутаторах)
+      * [S1](#s1-3)
+      * [S2](#s2-3)
+      * [S3](#s3-3)
+      * [Роли коммутаторов и портов](#роли-коммутаторов-и-портов)
   * [Часть 3. Наблюдение за процессом выбора протоколом STP порта, исходя из стоимости портов](#часть-3-наблюдение-за-процессом-выбора-протоколом-stp-порта-исходя-из-стоимости-портов)
   * [Часть 4. Наблюдение за процессом выбора протоколом STP порта, исходя из приоритета портов](#часть-4-наблюдение-за-процессом-выбора-протоколом-stp-порта-исходя-из-приоритета-портов)
 * [Настройки по проекту](#настройки-по-проекту)
@@ -119,6 +134,78 @@ S3#copy running-config startup-config
 ![S2_ping_S3.jpg](images/S2_ping_S3.jpg)
 
 ## Часть 2. Выбор корневого моста
+### Шаг 1:	Отключите все порты на коммутаторах.
+#### S1
+```
+S1(config)#interface range fa0/1-24, g0/1-2
+S1(config-if-range)#shutdown
+ 
+S1(config-if-range)#do show ip interface brief
+```
+#### S2
+```
+S2(config)#interface range fa0/1-24, g0/1-2
+S2(config-if-range)#shutdown
+
+S2(config-if-range)#do show ip interface brief
+```
+#### S3
+```
+S3(config)#interface range fa0/1-24, g0/1-2
+S3(config-if-range)#shutdown
+
+S3(config-if-range)#do show ip interface brief
+```
+### Шаг 2:	Настройте подключенные порты в качестве транковых.
+#### S1
+```
+S1(config)#interface range fa0/1-4
+S1(config-if-range)#switchport mode trunk
+S1(config-if-range)#switchport nonegotiate
+
+S1#show interfaces status
+```
+#### S2
+```
+S2(config)#interface range fa0/1-4
+S2(config-if-range)#switchport mode trunk
+S2(config-if-range)#switchport nonegotiate
+
+S2#show interfaces status
+```
+#### S3
+```
+S3(config)#interface range fa0/1-4
+S3(config-if-range)#switchport mode trunk
+S3(config-if-range)#switchport nonegotiate
+
+S3#show interfaces status
+```
+### Шаг 3:	Включите порты F0/2 и F0/4 на всех коммутаторах.
+#### S1
+```
+S1(config)#interface range fa0/2, fa0/4
+S1(config-if-range)#no shutdown 
+
+S1(config-if-range)#do show interfaces status
+```
+#### S2
+```
+S2(config)#interface range fa0/2-4
+S2(config-if-range)#no shutdown 
+
+S2(config-if-range)#do show interfaces status
+```
+#### S3
+```
+S3(config)#interface range fa0/2-4
+S3(config-if-range)#no shutdown
+
+S3(config-if-range)#do show interfaces status
+```
+#### Роли коммутаторов и портов
+![Topogy_part2_step3.jpg](images/Topogy_part2_step3.jpg)
+![Role_switches_and_ports.jpg](images/Role_switches_and_ports.jpg)
 
 ## Часть 3. Наблюдение за процессом выбора протоколом STP порта, исходя из стоимости портов
 
