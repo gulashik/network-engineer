@@ -210,7 +210,25 @@ S3(config-if-range)#do show interfaces status
 ![Role_switches_and_ports.jpg](images/Role_switches_and_ports.jpg)
 
 ## Часть 3. Наблюдение за процессом выбора протоколом STP порта, исходя из стоимости портов
+### Шаг 1:	Определите коммутатор с заблокированным портом.
+![Role_port_blocking.jpg](images/Role_port_blocking.jpg)
 
+### Шаг 2:	Измените стоимость порта.
+#### S2
+```
+S2(config)#interface f0/2
+S2(config-if)#spanning-tree vlan 1 cost 18
+```
+### Шаг 3:	Просмотрите изменения протокола spanning-tree.
+![Role_ports_swap_part3_step3.jpg](images/Role_ports_swap_part3_step3.jpg)
+
+### Шаг 4:	Удалите изменения стоимости порта.
+#### S2
+``` 
+S2(config)#interface f0/2
+S2(config-if)#no spanning-tree vlan 1 cost 18
+```
+![Role_ports_swap_part3_step4.jpg](images/Role_ports_swap_part3_step4.jpg)
 ## Часть 4. Наблюдение за процессом выбора протоколом STP порта, исходя из приоритета портов
 
 
