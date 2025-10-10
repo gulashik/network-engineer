@@ -30,10 +30,12 @@
 Больше команд показывать
 
 Оставить в конце
-### Файл проекта 
-- [HomeWork.pkt](cisco-packet-tracer/HomeWork.pkt) 
+# Настройки по проекту
+## Файл проекта
+- [HomeWork.pkt](cisco-packet-tracer/HomeWork.pkt)
 
-### Конфиги сетевых устройств 
+## Конфиги сетевых устройств
 - [Папка configs](cisco-packet-tracer/configs)
+
 
 
