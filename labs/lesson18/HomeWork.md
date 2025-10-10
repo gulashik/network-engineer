@@ -112,6 +112,12 @@ S3(config-if)#ip address 192.168.1.3 255.255.255.0
 
 S3#copy running-config startup-config
 ```
+### S1 ping S2, S3
+![S1_ping_S2_S3.jpg](images/S1_ping_S2_S3.jpg)
+
+### S2 ping S3
+![S2_ping_S3.jpg](images/S2_ping_S3.jpg)
+
 ## Часть 2. Выбор корневого моста
 
 ## Часть 3. Наблюдение за процессом выбора протоколом STP порта, исходя из стоимости портов
