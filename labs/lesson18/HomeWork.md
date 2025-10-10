@@ -198,14 +198,14 @@ S1(config-if-range)#do show interfaces status
 ```
 #### S2
 ```
-S2(config)#interface range fa0/2-4
+S2(config)#interface range fa0/2, fa0/4
 S2(config-if-range)#no shutdown 
 
 S2(config-if-range)#do show interfaces status
 ```
 #### S3
 ```
-S3(config)#interface range fa0/2-4
+S3(config)#interface range fa0/2, fa0/4
 S3(config-if-range)#no shutdown
 
 S3(config-if-range)#do show interfaces status
@@ -236,8 +236,30 @@ S2(config-if)#no spanning-tree vlan 1 cost 18
 ```
 ![Role_ports_swap_part3_step4.jpg](images/Role_ports_swap_part3_step4.jpg)
 ## Часть 4. Наблюдение за процессом выбора протоколом STP порта, исходя из приоритета портов
+### Шаг 1:	Включите порты F0/1 и F0/3 на всех коммутаторах.
+#### S1
+```
+S1(config)#interface range fa0/1, fa0/3
+S1(config-if-range)#no shutdown 
 
+S1(config-if-range)#do show interfaces status
+```
+#### S2
+```
+S2(config)#interface range fa0/1, fa0/3
+S2(config-if-range)#no shutdown 
 
+S2(config-if-range)#do show interfaces status
+```
+#### S3
+```
+S3(config)#interface range fa0/1, fa0/3
+S3(config-if-range)#no shutdown
+
+S3(config-if-range)#do show interfaces status
+```
+### Шаг 2: Порт корневого моста переместился на порт с меньшим номером
+![Role_ports_up_part4_step2.jpg](images/Role_ports_up_part4_step2.jpg)
 
 # Настройки по проекту
 ## Файл проекта 
